@@ -1,5 +1,5 @@
 {
-  "name": "@atomicjolt/lti-client",
+  "name": "@atomicjolt/lti-types",
   "version": "1.0.0",
   "description": "LTI Typescript definiations.",
   "main": "dist/index.js",
