@@ -64,16 +64,15 @@ export const ALL_SCOPES = [
   NAMES_AND_ROLES_SCOPE,
 ];
 
-export const CANVAS_PUBLIC_JWKS_URL = "https://canvas.instructure.com/api/lti/security/jwks";
-export const CANVAS_OIDC_URL = "https://sso.canvaslms.com/api/lti/authorize_redirect";
+export const CANVAS_PUBLIC_JWKS_URL = "https://sso.canvaslms.com/api/lti/security/jwks";
 export const CANVAS_AUTH_TOKEN_URL = "https://canvas.instructure.com/login/oauth2/token";
+export const CANVAS_OIDC_URL = "https://sso.canvaslms.com/api/lti/authorize_redirect";
 
-export const CANVAS_BETA_PUBLIC_JWKS_URL = "https://canvas.beta.instructure.com/api/lti/security/jwks";
-export const CANVAS_BETA_AUTH_TOKEN_URL = "https://canvas.beta.instructure.com/login/oauth2/token";
-export const CANVAS_BETA_OIDC_URL = "https://canvas.beta.instructure.com/api/lti/authorize_redirect";
+export const CANVAS_BETA_PUBLIC_JWKS_URL = "https://sso.beta.canvaslms.com/api/lti/security/jwks";
+export const CANVAS_BETA_AUTH_TOKEN_URL = "https://sso.beta.canvaslms.com/login/oauth2/token";
+export const CANVAS_BETA_OIDC_URL = "https://sso.beta.canvaslms.com/api/lti/authorize_redirect";
 
 export const CANVAS_SUBMISSION_TYPE = "https://canvas.instructure.com/lti/submission_type";
-
 
 interface IdTokenErrors {
   errors: {
