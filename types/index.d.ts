@@ -20,6 +20,7 @@ export declare const DEEP_LINKING_TOOL_MSG_CLAIM = "https://purl.imsglobal.org/s
 export declare const DEEP_LINKING_TOOL_LOG_CLAIM = "https://purl.imsglobal.org/spec/lti-dl/claim/log";
 export declare const CONTENT_ITEM_CLAIM = "https://purl.imsglobal.org/spec/lti-dl/claim/content_items";
 export declare const NAMES_AND_ROLES_CLAIM = "https://purl.imsglobal.org/spec/lti-nrps/claim/namesroleservice";
+export declare const MIGRATION_CLAIM = "https://purl.imsglobal.org/spec/lti/claim/lti1p1";
 export declare const NAMES_AND_ROLES_SERVICE_VERSIONS: string[];
 export declare const CALIPER_CLAIM = "https://purl.imsglobal.org/spec/lti-ces/claim/caliper-endpoint-service";
 export declare const TOOL_LAUNCH_CALIPER_CONTEXT = "http://purl.imsglobal.org/ctx/caliper/v1p1/ToolLaunchProfile-extension";
@@ -142,9 +143,9 @@ export declare enum AGSScopes {
     lineItemReadOnly = "https://purl.imsglobal.org/spec/lti-ags/scope/lineitem.readonly"
 }
 export type AGSClaim = {
-    scope: Array<keyof typeof AGSScopes>;
-    lineitems: string;
-    lineitem: string;
+    scope: Array<AGSScopes>;
+    lineitems?: string;
+    lineitem?: string;
     validation_context?: string | null;
     errors?: IdTokenErrors;
 };
@@ -195,6 +196,7 @@ export type IdToken = {
     [NAMES_AND_ROLES_CLAIM]?: NamesAndRolesClaim;
     [AGS_CLAIM]?: AGSClaim;
     [LIS_CLAIM]?: LISClaim;
+    [MIGRATION_CLAIM]?: object;
     [CUSTOM_CLAIM]?: object;
     [LTI11_LEGACY_USER_ID_CLAIM]?: string;
     picture?: string;

@@ -25,6 +25,7 @@ export const DEEP_LINKING_TOOL_MSG_CLAIM = "https://purl.imsglobal.org/spec/lti-
 export const DEEP_LINKING_TOOL_LOG_CLAIM = "https://purl.imsglobal.org/spec/lti-dl/claim/log";
 export const CONTENT_ITEM_CLAIM = "https://purl.imsglobal.org/spec/lti-dl/claim/content_items";
 export const NAMES_AND_ROLES_CLAIM = "https://purl.imsglobal.org/spec/lti-nrps/claim/namesroleservice";
+export const MIGRATION_CLAIM = "https://purl.imsglobal.org/spec/lti/claim/lti1p1";
 
 export const NAMES_AND_ROLES_SERVICE_VERSIONS = ["2.0"];
 
@@ -235,14 +236,14 @@ export enum AGSScopes {
 // https://www.imsglobal.org/spec/lti-ags/v2p0/#assignment-and-grade-service-claim
 export type AGSClaim = {
   // An array of scopes the tool may ask an access token for.
-  scope: Array<keyof typeof AGSScopes>;
+  scope: Array<AGSScopes>;
   // The endpoint URL for accessing the line item container for the current context.
   // May be omitted if the tool has no permissions to access this endpoint
-  lineitems: string;
+  lineitems?: string;
   // When an LTI message is launching a resource associated to one and only one lineitem,
   // the claim must include the endpoint URL for accessing the associated line item;
   // in all other cases, this property must be either blank or not included in the claim
-  lineitem: string;
+  lineitem?: string;
   validation_context?: string | null;
   errors?: IdTokenErrors;
 };
@@ -302,6 +303,7 @@ export type IdToken = {
   [NAMES_AND_ROLES_CLAIM]?: NamesAndRolesClaim;
   [AGS_CLAIM]?: AGSClaim;
   [LIS_CLAIM]?: LISClaim;
+  [MIGRATION_CLAIM]?: object;
   [CUSTOM_CLAIM]?: object;
 
   [LTI11_LEGACY_USER_ID_CLAIM]?: string;
