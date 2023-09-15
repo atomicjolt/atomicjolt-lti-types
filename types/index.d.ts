@@ -40,12 +40,12 @@ export declare const COURSE_CONTEXT = "http://purl.imsglobal.org/vocab/lis/v2/co
 export declare const ACCOUNT_CONTEXT = "Account";
 export declare const TOOL_CONFIGURATION = "https://purl.imsglobal.org/spec/lti-tool-configuration";
 export declare const ALL_SCOPES: string[];
-export declare const CANVAS_PUBLIC_JWKS_URL = "https://canvas.instructure.com/api/lti/security/jwks";
-export declare const CANVAS_OIDC_URL = "https://sso.canvaslms.com/api/lti/authorize_redirect";
+export declare const CANVAS_PUBLIC_JWKS_URL = "https://sso.canvaslms.com/api/lti/security/jwks";
 export declare const CANVAS_AUTH_TOKEN_URL = "https://canvas.instructure.com/login/oauth2/token";
-export declare const CANVAS_BETA_PUBLIC_JWKS_URL = "https://canvas.beta.instructure.com/api/lti/security/jwks";
-export declare const CANVAS_BETA_AUTH_TOKEN_URL = "https://canvas.beta.instructure.com/login/oauth2/token";
-export declare const CANVAS_BETA_OIDC_URL = "https://canvas.beta.instructure.com/api/lti/authorize_redirect";
+export declare const CANVAS_OIDC_URL = "https://sso.canvaslms.com/api/lti/authorize_redirect";
+export declare const CANVAS_BETA_PUBLIC_JWKS_URL = "https://sso.beta.canvaslms.com/api/lti/security/jwks";
+export declare const CANVAS_BETA_AUTH_TOKEN_URL = "https://sso.beta.canvaslms.com/login/oauth2/token";
+export declare const CANVAS_BETA_OIDC_URL = "https://sso.beta.canvaslms.com/api/lti/authorize_redirect";
 export declare const CANVAS_SUBMISSION_TYPE = "https://canvas.instructure.com/lti/submission_type";
 interface IdTokenErrors {
     errors: {
