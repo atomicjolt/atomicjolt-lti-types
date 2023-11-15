@@ -14,6 +14,7 @@ export declare const EXTENSION_CLAIM = "http://www.ExamplePlatformVendor.com/ses
 export declare const LIS_CLAIM = "https://purl.imsglobal.org/spec/lti/claim/lis";
 export declare const TARGET_LINK_URI_CLAIM = "https://purl.imsglobal.org/spec/lti/claim/target_link_uri";
 export declare const LTI11_LEGACY_USER_ID_CLAIM = "https://purl.imsglobal.org/spec/lti/claim/lti11_legacy_user_id";
+export declare const LTI1P1_CLAIM = "https://purl.imsglobal.org/spec/lti/claim/lti1p1";
 export declare const DEEP_LINKING_CLAIM = "https://purl.imsglobal.org/spec/lti-dl/claim/deep_linking_settings";
 export declare const DEEP_LINKING_DATA_CLAIM = "https://purl.imsglobal.org/spec/lti-dl/claim/data";
 export declare const DEEP_LINKING_TOOL_MSG_CLAIM = "https://purl.imsglobal.org/spec/lti-dl/claim/msg";
@@ -164,7 +165,7 @@ export type ContextClaim = {
     validation_context?: string | null;
     errors?: IdTokenErrors;
 };
-export type ToolPlatromClaim = {
+export type ToolPlatformClaim = {
     guid: string;
     contact_email?: string;
     description?: string;
@@ -190,7 +191,7 @@ export type IdToken = {
     [TARGET_LINK_URI_CLAIM]: string;
     [ROLES_CLAIM]: Array<Roles>;
     [CONTEXT_CLAIM]?: ContextClaim;
-    [TOOL_PLATFORM_CLAIM]?: ToolPlatromClaim;
+    [TOOL_PLATFORM_CLAIM]?: ToolPlatformClaim;
     [DEEP_LINKING_CLAIM]?: DeepLinkingClaim;
     [LAUNCH_PRESENTATION]?: LaunchPresentationClaim;
     [NAMES_AND_ROLES_CLAIM]?: NamesAndRolesClaim;
@@ -199,6 +200,7 @@ export type IdToken = {
     [MIGRATION_CLAIM]?: object;
     [CUSTOM_CLAIM]?: object;
     [LTI11_LEGACY_USER_ID_CLAIM]?: string;
+    [LTI1P1_CLAIM]?: object;
     picture?: string;
     email?: string;
     name?: string;
@@ -207,6 +209,32 @@ export type IdToken = {
     middle_name?: string;
     locale?: string;
     errors?: IdTokenErrors;
+};
+export type PlatformConfiguration = {
+    issuer: string;
+    authorization_endpoint: string;
+    token_endpoint: string;
+    token_endpoint_auth_methods_supported: string[];
+    token_endpoint_auth_signing_alg_values_supported: string[];
+    jwks_uri: string;
+    registration_endpoint: string;
+    scopes_supported: string[];
+    response_types_supported: string[];
+    subject_types_supported: string[];
+    id_token_signing_alg_values_supported: string[];
+    claims_supported: string[];
+    authorization_server?: string;
+    "https://purl.imsglobal.org/spec/lti-platform-configuration": LtiPlatformConfiguration;
+};
+export type LtiPlatformConfiguration = {
+    product_family_code: string;
+    version: string;
+    messages_supported: MessageSupported[];
+    variables?: string[];
+};
+export type MessageSupported = {
+    type: string;
+    placements?: string[];
 };
 export {};
 //# sourceMappingURL=index.d.ts.map
