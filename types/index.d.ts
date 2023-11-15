@@ -236,5 +236,47 @@ export type MessageSupported = {
     type: string;
     placements?: string[];
 };
+export type ToolConfiguration = {
+    application_type: string;
+    grant_types: string[];
+    response_types: string[];
+    redirect_uris: string[];
+    initiate_login_uri: string;
+    client_name: string;
+    jwks_uri: string;
+    logo_uri?: string;
+    token_endpoint_auth_method: string;
+    contacts?: string[];
+    scope: string;
+    "https://purl.imsglobal.org/spec/lti-tool-configuration": LtiToolConfiguration;
+    client_uri?: string;
+    tos_uri?: string;
+    policy_uri?: string;
+    client_id?: string;
+    registration_client_uri?: string;
+};
+export type LtiToolConfiguration = {
+    domain: string;
+    secondary_domains?: string[];
+    deployment_id?: string;
+    target_link_uri: string;
+    custom_parameters?: {
+        [key: string]: string;
+    };
+    description?: string;
+    messages: LtiMessage[];
+    claims: string[];
+};
+export type LtiMessage = {
+    type: string;
+    target_link_uri?: string;
+    label?: string;
+    icon_uri?: string;
+    custom_parameters?: {
+        [key: string]: string;
+    };
+    placements?: string[];
+    roles?: string[];
+};
 export {};
 //# sourceMappingURL=index.d.ts.map
