@@ -214,17 +214,17 @@ export type PlatformConfiguration = {
     issuer: string;
     authorization_endpoint: string;
     token_endpoint: string;
-    token_endpoint_auth_methods_supported: string[];
-    token_endpoint_auth_signing_alg_values_supported: string[];
+    token_endpoint_auth_methods_supported?: string[];
+    token_endpoint_auth_signing_alg_values_supported?: string[];
     jwks_uri: string;
-    registration_endpoint: string;
-    scopes_supported: string[];
-    response_types_supported: string[];
-    subject_types_supported: string[];
-    id_token_signing_alg_values_supported: string[];
-    claims_supported: string[];
+    registration_endpoint?: string;
+    scopes_supported?: string[];
+    response_types_supported?: string[];
+    subject_types_supported?: string[];
+    id_token_signing_alg_values_supported?: string[];
+    claims_supported?: string[];
     authorization_server?: string;
-    "https://purl.imsglobal.org/spec/lti-platform-configuration": LtiPlatformConfiguration;
+    "https://purl.imsglobal.org/spec/lti-platform-configuration"?: LtiPlatformConfiguration;
 };
 export type LtiPlatformConfiguration = {
     product_family_code: string;
@@ -278,5 +278,33 @@ export type LtiMessage = {
     placements?: string[];
     roles?: string[];
 };
+export interface Context {
+    id: string;
+    label: string;
+    title: string;
+}
+export declare enum MemberStatus {
+    Active = 0,
+    Inactive = 1,
+    Deleted = 2
+}
+export interface Member {
+    email?: string;
+    family_name?: string;
+    given_name?: string;
+    message?: any[];
+    name?: string;
+    picture?: string;
+    roles?: any[];
+    lis_person_sourcedid?: string;
+    status: MemberStatus;
+    user_id?: string;
+    lti11_legacy_user_id?: string;
+}
+export interface MembershipContainer {
+    id: string;
+    context: Context;
+    members: Member[];
+}
 export {};
 //# sourceMappingURL=index.d.ts.map
