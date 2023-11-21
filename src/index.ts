@@ -284,8 +284,8 @@ export type ToolPlatformClaim = {
 // https://www.imsglobal.org/spec/lti/v1p3#resource-link-launch-request-message
 export type IdToken = {
   aud: string;
-  auds: Array<string>;
-  azp: string;
+  auds?: Array<string>;
+  azp?: string;
   exp: number;
   iat: number;
   iss: string;
